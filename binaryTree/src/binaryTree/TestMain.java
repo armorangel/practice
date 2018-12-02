@@ -12,5 +12,15 @@ public class TestMain {
 		tree.addNode(1);
 		
 		tree.getRoot();
+		
+		tree.preOrder(tree.getRoot());
+		System.out.println();
+		tree.inOrder(tree.getRoot());
+		System.out.println();
+		tree.postOrder(tree.getRoot());
+		
+		
+		
+		
 	}
 }

@@ -16,8 +16,7 @@ public class Tree {
 		}
 		Node focusNode = root;
 		while (true) {
-			int height = newNode.getHeight() + 1;
-			newNode.setHeight(height);
+
 			if (focusNode.getValue() > value) {
 				if (focusNode.getLeft() == null) {
 					focusNode.setLeft(newNode);
@@ -34,9 +33,31 @@ public class Tree {
 		}
 	}
 
-	public void getRoot() {
-		System.out.println(root);
+	public Node getRoot() {
+		return root;
 	}
 
+	public void preOrder(Node root) {
+		if (root != null) {
+			System.out.print(root.getValue() + " ");
+			preOrder(root.getLeft());
+			preOrder(root.getRight());
+		}
+	}
 
+	public void inOrder(Node root) {
+		if (root != null) {
+			preOrder(root.getLeft());
+			System.out.print(root.getValue() + " ");
+			preOrder(root.getRight());
+		}
+	}
+
+	public void postOrder(Node root) {
+		if (root != null) {
+			preOrder(root.getLeft());
+			preOrder(root.getRight());
+			System.out.print(root.getValue() + " ");
+		}
+	}
 }

@@ -5,7 +5,6 @@ public class Node {
 	private Node left;
 	private Node right;
 
-	private int height;
 	private int value;
 
 	public Node getLeft() {
@@ -22,14 +21,6 @@ public class Node {
 
 	public void setRight(Node right) {
 		this.right = right;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
-	public void setHeight(int height) {
-		this.height = height;
 	}
 
 	public int getValue() {

@@ -7,9 +7,14 @@ public class Stack {
 	private final int SIZE = 10;
 
 	private int ind;
+	private int _size;
 
-	public Stack() {
+	private int[] array;
+
+	public Stack(int size) {
 		ind = 0;
+		this._size = size;
+		array = new int[size];
 	}
 
 	private ArrayList<Integer> arr = new ArrayList<Integer>();

@@ -4,7 +4,7 @@ public class TestMain {
 
 	public static void main(String[] args) {
 
-		Stack s = new Stack();
+		Stack s = new Stack(10);
 
 		s.push(3);
 		s.push(1);
