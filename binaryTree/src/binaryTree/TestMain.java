@@ -12,7 +12,7 @@ public class TestMain {
 		tree.addNode(1);
 		
 		tree.getRoot();
-		
+		//g
 		tree.preOrder(tree.getRoot());
 		System.out.println();
 		tree.inOrder(tree.getRoot());
