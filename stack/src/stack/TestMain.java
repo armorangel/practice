@@ -18,5 +18,12 @@ public class TestMain {
 		s.pop();
 		s.pop();
 		s.pop();
+		s.pop();
+		s.pop();
+		s.pop();
+		s.pop();
+		s.pop();
+		s.pop();
+		s.pop();
 	}
 }
