@@ -12,6 +12,8 @@ public class TestMain {
 		s.push(7);
 		s.push(5);
 		s.push(4);
+		s.push(2);
+		s.push(8);
 
 		s.pop();
 		s.pop();
