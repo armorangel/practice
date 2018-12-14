@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<select id="list" resultType="boardVO" parameterType="hashmap">
+		select * from (
+			select aa.*, rownum rnum from (
+				select * from qnaboard order by grpno desc, grpord
+			)aa
+		) <![CDATA[where rnum >=#{startRow} and rnum <=#{endRow}]]>
+	</select>
+
+	<select id="getMaxNum" resultType="int">
+		select NVL(max(qnum), 0) from
+		qnaboard
+	</select>
+	
+	<select id="getCount" resultType="int">
+		select NVL(count(qnum), 0) from qnaboard
+	</select>
+
+	<update id="order" parameterType="hashmap">
+		update qnaboard set
+		grpord=grpord + 1 where grpno=#{grpno} and depth>#{depth}
+	</update>
+
+	<insert id="insert" parameterType="boardVO">
+		insert into qnaboard
+		values(#{qnum},#{title},#{content},#{grpno},#{grpord},#{depth},sysdate)
+	</insert>
+
+	<select id="detail" parameterType="int" resultType="boardVO">
+		select * from
+		qnaboard where qnum = #{qnum}
+	</select>
+
+	<update id="update" parameterType="boardVo">
+		update qnaboard set
+		title=#{title}, content=#{content} where qnum = #{qnum}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from qnaboard where qnum = #{qnum}
+	</delete>
+</mapper>
